@@ -79,8 +79,8 @@ img {
   transition: opacity 250ms var(--time-function);
 }
 .backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
+  /* opacity: 0; */
+  /* pointer-events: none; */
 }
 /* спрятано модальное окно*/
 .backdrop.is-hidden .modal {
@@ -117,6 +117,12 @@ img {
 .modal-icon {
   width: 11px;
   height: 11px;
+  transition: fill 250ms var(--time-function);
+}
+
+.modal-button:hover .modal-icon,
+.modal-button:focus .modal-icon {
+  fill: var(--accent-color);
 }
 
 .modal-form {
@@ -133,6 +139,9 @@ img {
 
   color: var(--black-color);
 }
+.modal-form-list {
+}
+
 .form-item {
   position: relative;
   display: flex;
@@ -143,42 +152,65 @@ img {
 .form-item:not(:first-child) {
   margin-top: 12px;
 }
-.form-item:nth-child(5) {
+.form-item:nth-child(5) + .form-item-label {
   flex-direction: row;
+  align-items: center;
 }
 
 .form-item-label {
-  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
-
   color: var(--main-color);
 }
 
+.form-text {
+  margin-bottom: 4px;
+}
 .modal-input {
-  padding: 9px 15px;
+  width: 100%;
+  padding: 14px 15px 14px 42px;
+  border: none;
+  outline: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: outline 250ms var(--time-function);
 }
 
+.form-item-label:focus-within .modal-form-icon {
+  fill: var(--accent-color);
+}
+.modal-input:focus {
+  outline: 1px solid var(--accent-color);
+}
 .modal-form-icon {
   width: 18px;
   height: 18px;
   position: absolute;
   top: 50%;
   left: 15px;
+  transition: fill 250ms var(--time-function);
 }
 
 .form-textarea {
   resize: none;
   height: 120px;
-  padding: 12px 16px;
+  padding: 14px 16px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16px;
   letter-spacing: 0.01em;
-
+  border: none;
+  outline: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
   color: rgba(117, 117, 117, 0.5);
+  transition: outline 250ms var(--time-function);
+}
+
+.form-item-label:focus-within .form-textarea {
+  outline: 1px solid var(--accent-color);
 }
 
 .modal-form-btn {
@@ -201,6 +233,11 @@ img {
 .modal-form-btn:hover,
 .modal-form-btn:focus {
   background-color: #188ce8;
+}
+
+.checkbox {
+  appearance: none;
+  position: absolute;
 }
 
 /*-------------------header-------------------*/
