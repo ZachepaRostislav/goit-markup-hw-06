@@ -177,6 +177,7 @@ img {
   outline: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   transition: outline 250ms var(--time-function);
+  cursor: pointer;
 }
 
 .form-item-label:focus-within .modal-form-icon {
@@ -214,6 +215,7 @@ img {
   border-radius: 4px;
   color: rgba(117, 117, 117, 0.5);
   transition: outline 250ms var(--time-function);
+  cursor: pointer;
 }
 
 .form-textarea:hover,
@@ -264,6 +266,10 @@ img {
 .form-item-label:focus-within .icon,
 .form-item-label:hover .icon {
   border-color: var(--accent-color);
+}
+.form-item-label:focus-within,
+.form-item-label:hover {
+  cursor: pointer;
 }
 
 .checkbox:checked + .icon {
@@ -818,7 +824,7 @@ img {
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 0.03em;
-
+  cursor: pointer;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.6);
 }
